@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_scheduler">
+
+    <fragment
+        android:id="@+id/navigation_scheduler"
+        android:name="com.chargepoint.fleetscheduling.ui.scheduler.SchedulerFragment"
+        android:label="@string/title_scheduler"
+        tools:layout="@layout/fragment_scheduler" />
+
+    <fragment
+        android:id="@+id/navigation_chargers"
+        android:name="com.chargepoint.fleetscheduling.ui.chargers.ChargersFragment"
+        android:label="@string/title_chargers"
+        tools:layout="@layout/fragment_chargers" />
+
+    <fragment
+        android:id="@+id/navigation_vehicles"
+        android:name="com.chargepoint.fleetscheduling.ui.vehicles.VehiclesFragment"
+        android:label="@string/title_vehicles"
+        tools:layout="@layout/fragment_vehicles" />
+
+</navigation>
