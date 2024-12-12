@@ -6,15 +6,16 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chargepoint.fleetscheduling.R
 import com.chargepoint.fleetscheduling.databinding.FragmentSchedulerBinding
-import com.chargepoint.fleetscheduling.ui.scheduler.strategy.SequentialFleetScheduler
 import com.chargepoint.fleetscheduling.ui.scheduler.strategy.OptimizedFleetScheduler
 import com.chargepoint.fleetscheduling.ui.scheduler.strategy.ScheduleManager
+import com.chargepoint.fleetscheduling.ui.scheduler.strategy.SequentialFleetScheduler
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class SchedulerFragment : Fragment() {
@@ -23,6 +24,7 @@ class SchedulerFragment : Fragment() {
     private lateinit var viewModel: SchedulerViewModel
     private lateinit var adapter: SchedulerAdapter
     private lateinit var scheduleManager: ScheduleManager
+    private lateinit var headerTextView:TextView
 
     private var optimizedFleetScheduler = OptimizedFleetScheduler()
     private var sequentialFleetScheduler = SequentialFleetScheduler()
@@ -48,16 +50,21 @@ class SchedulerFragment : Fragment() {
         val recyclerView: RecyclerView? = view.findViewById(R.id.recyclerView)
         recyclerView?.layoutManager = LinearLayoutManager(requireContext())
         recyclerView?.adapter = adapter
+
         scheduleManager = ScheduleManager(OptimizedFleetScheduler())
         viewModel.updateFleetSchedule(scheduleManager)
+
         // Observe the LiveData from ViewModel
         viewModel.schedulerItemsList.observe(viewLifecycleOwner) { schedulerItemsList ->
             adapter.updateList(schedulerItemsList)
         }
 
-        val fab: FloatingActionButton = view.findViewById(R.id.fab)
+        headerTextView = view.findViewById(R.id.headerTextView)
+        headerTextView.text = "Optimized Scheduling"
 
-        // FAB Click Listener
+
+
+        val fab: FloatingActionButton = view.findViewById(R.id.fab)
         fab.setOnClickListener {
             changeScheduleStratey(fab)
         }
@@ -75,13 +82,15 @@ class SchedulerFragment : Fragment() {
                     // Set optimized scheduling strategy
                     scheduleManager.setStrategy(optimizedFleetScheduler)
                     viewModel.updateFleetSchedule(scheduleManager)
+                    headerTextView.text = menuItem.title
                     true
                 }
 
-                R.id.default_scheduling -> {
+                R.id.sequential_scheduling -> {
                     // Set default scheduling strategy
                     scheduleManager.setStrategy(sequentialFleetScheduler)
                     viewModel.updateFleetSchedule(scheduleManager)
+                    headerTextView.text = menuItem.title
                     true
                 }
                 else -> false

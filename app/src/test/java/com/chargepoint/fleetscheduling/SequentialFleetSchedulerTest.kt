@@ -1,11 +1,11 @@
 package com.chargepoint.fleetscheduling
 
-import org.junit.jupiter.api.Assertions.*
 import com.chargepoint.fleetscheduling.ui.chargers.ChargerItem
 import com.chargepoint.fleetscheduling.ui.chargers.ChargerStatus
 import com.chargepoint.fleetscheduling.ui.scheduler.strategy.SequentialFleetScheduler
 import com.chargepoint.fleetscheduling.ui.vehicles.VehicleItem
 import com.chargepoint.fleetscheduling.ui.vehicles.VehicleType
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class SequentialFleetSchedulerTest {

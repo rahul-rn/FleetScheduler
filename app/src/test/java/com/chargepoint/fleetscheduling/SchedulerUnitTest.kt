@@ -6,10 +6,10 @@ import com.chargepoint.fleetscheduling.ui.scheduler.strategy.OptimizedFleetSched
 import com.chargepoint.fleetscheduling.ui.scheduler.strategy.SequentialFleetScheduler
 import com.chargepoint.fleetscheduling.ui.vehicles.VehicleItem
 import com.chargepoint.fleetscheduling.ui.vehicles.VehicleType
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
+import org.junit.Test
 import org.junit.jupiter.api.Assertions
 
 /**
