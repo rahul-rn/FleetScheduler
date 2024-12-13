@@ -3,7 +3,7 @@
 An app that will provide different options for scheduling the charging of trucks on available chargers. 
 
 Details:
-  - Using Jetpack Compose for UI and a tabbed view to display three screens
+- A tabbed view to display three screens
   -  Scheduler
     - Display list of charging with assigned vehicle
     - An UI option to toggle scheduling algorithms
@@ -33,4 +33,5 @@ Repository—We introduced a repository to fetch and manage data. Currently, we 
   - Newly added chargers or trucks are not added to scheduling algorithms
   - Switching between strategies is reflected on the second charger as the first charger queue is unchanged
   - Local caching is not implemented; all data is available in memory
+  - As UI is simlle used default xml layout, optimization will be to use jetpack compose to make complex UI
 
