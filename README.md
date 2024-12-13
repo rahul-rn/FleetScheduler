@@ -23,11 +23,12 @@ Repository—We introduced a repository to fetch and manage data. Currently, we 
 
 - Unit tests
   -  Added essential tests to ensure the quality of scheduling algorithms
-
-- Lint Warnings
-  - Fixed all lint warnings except locale-related warnings
      
 - Installations instructions
   - git clone git@github.com:rahul-rn/FleetScheduler
   - Open the project in Android Studio and press on Run
+ 
+- Note
+  - Fixed all lint warnings except locale-related warnings
+  - Newly added chargers or trucks are not added to scheduling algorithms
 
