@@ -28,7 +28,7 @@ Repository—We introduced a repository to fetch and manage data. Currently, we 
   - git clone git@github.com:rahul-rn/FleetScheduler
   - Open the project in Android Studio and press on Run
     
- - Note
+- Note
   - Fixed all lint warnings except locale-related warnings
   - Newly added chargers or trucks are not added to scheduling algorithms
   - Switching between strategies is reflected on the second charger as the first charger queue is unchanged
