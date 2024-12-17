@@ -21,11 +21,11 @@ class FleetScheduleLocalRepository {
 
         vehicleItemsList = mutableListOf(
             VehicleItem(1, 100, 50.0),
-            VehicleItem(2, 80, 30.0),
-            VehicleItem(3, 120, 70.0),
-            VehicleItem(4, 60, 20.0),
-            VehicleItem(5, 50, 30.0, VehicleType.VAN),
-            VehicleItem(6, 50, 30.0, VehicleType.CAR)
+            VehicleItem(2, 100, 30.0),
+            VehicleItem(3, 100, 70.0),
+            VehicleItem(4, 100, 20.0),
+            VehicleItem(5, 100, 30.0, VehicleType.VAN),
+            VehicleItem(6, 100, 30.0, VehicleType.CAR)
         )
     }
 
